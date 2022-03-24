@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: abs-assignment
+  name: abs-assignment-service
+  namespace: abs-ns
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: abs-assignment
+  sessionAffinity: None
+  type: LoadBalancer

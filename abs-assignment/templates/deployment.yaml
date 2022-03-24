@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: abs-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: abs-assignment
+  template:
+    metadata:
+      labels:
+        app: abs-assignment
+    spec:
+      containers:
+      - name: abs-html
+        image: <registry>/<repository>:<version>
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: creds-registry
+
