@@ -1,5 +1,5 @@
 replicaCount: 1
 
-repository: genomics.azurecr.io
+repository: <registry>.azurecr.io
 
 containerPort: 80
